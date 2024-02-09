@@ -23,4 +23,4 @@ Fight system, Item pick-up, Puzzles, Interdimensional teleport, Buffs/Debuffs
 Grappling hook, double jump, dash, sneak
 
 7. ANIMATIONS
-Idle, Run, Jump, Falling, Attack, Hurt
+Idle, run, jump, fall, attack, hurt, crouch
