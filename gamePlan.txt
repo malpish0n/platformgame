@@ -1,0 +1,23 @@
+1. LEVEL THEMES 
+Dark Forest -> Underground cave -> Underwater Cave -> Dungeon
+
+2. MAIN CHARACTER
+Jax
+
+3. OPPONENTS
+Skeletons / Ghosts / Ivern - Dark Forest
+Ghouls / Skinwalker(?) / Spiders / Worm - Underground cave
+Anglerfish / Shark / Mermaid - Underwater Cave
+Mimic(?) / Flying eye / Golem / Goblin / Boss - Combined monsters - Dungeon
+
+4. ENTITIES
+Firefly - Dark Forest
+Bats - Underground Cave
+Anglerfish / Squid / Blobfish - Underwater Cave
+Rats / Slime - Dungeon
+
+5. MECHANICS
+Fight system, Item pick-up, Puzzles, Interdimensional teleport, Buffs/Debuffs
+
+6. PLAYER MOVEMENT
+Grappling hook, double jump, dash, sneak
