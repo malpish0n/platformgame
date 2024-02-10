@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0921ba7407d836c4e94d431b817bc472
+guid: 976f3f1a38d7d1d4798f0c5e5dbc561d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638431028291514236
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: duch2_prjc_Frame_0
+  - name: Ghost_Frame_0
     originalName: 
     pivot: {x: 0.5185185, y: -0.074074075}
     alignment: 9
@@ -129,10 +129,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 39
+      y: 181
       width: 27
       height: 27
-    spriteID: 62a129d82489fda478a09bd66b942de5
+    spriteID: f045e1c88dc4bd54bba713fd4c01c93f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,8 +140,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 39}
-  - name: duch2_prjc_Frame_1
+    uvTransform: {x: 4, y: 181}
+  - name: Ghost_Frame_1
     originalName: 
     pivot: {x: 0.4814815, y: -0.037037037}
     alignment: 9
@@ -149,10 +149,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 74
+      y: 216
       width: 27
       height: 27
-    spriteID: 77875d32991004e44afa231814525089
+    spriteID: 5baad704fb697cb4c9e8ca30b3b197ae
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,19 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 74}
-  - name: duch2_prjc_Frame_2
+    uvTransform: {x: 4, y: 216}
+  - name: Ghost_Frame_2
     originalName: 
     pivot: {x: 0.48, y: 0.035714287}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 40
+      x: 43
       y: 74
       width: 25
       height: 28
-    spriteID: 355606ce8a765da49aa3f85a40dc598a
+    spriteID: a74379abeb7c02d4f9368dbd49093c91
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,8 +180,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 40, y: 74}
-  - name: duch2_prjc_Frame_3
+    uvTransform: {x: 43, y: 74}
+  - name: Ghost_Frame_3
     originalName: 
     pivot: {x: 0.5, y: -0.037037037}
     alignment: 9
@@ -189,10 +189,130 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 111
       width: 28
       height: 27
-    spriteID: 73859fd0e53d972418116a10af00c806
+    spriteID: 93dd170cc88b8ca43b31c2d45d65895b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 111}
+  - name: Ghost_Frame_4
+    originalName: 
+    pivot: {x: 0.4814815, y: -0.074074075}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 4
+      width: 27
+      height: 27
+    spriteID: 80cc4ae8137b51949b7f12c63676b8cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 4}
+  - name: Ghost_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 146
+      width: 28
+      height: 27
+    spriteID: 28d7ecb6ca4b4d64f8e0cf985c0ceb96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 146}
+  - name: Ghost_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 41
+      width: 30
+      height: 27
+    spriteID: f318d8cac6e91b94296e685584e036dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 41}
+  - name: Ghost_Frame_7
+    originalName: 
+    pivot: {x: 0.4827586, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 29
+      height: 27
+    spriteID: 5204ef8680570024ab6b2658149d04c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: Ghost_Frame_8
+    originalName: 
+    pivot: {x: 0.5185185, y: -0.074074075}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 39
+      width: 27
+      height: 27
+    spriteID: 88812dfcdcacb3e4ab7612fa7746e18c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 39}
+  - name: Ghost_Frame_9
+    originalName: 
+    pivot: {x: 0.516129, y: -0.06896552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 31
+      height: 29
+    spriteID: 3a29009e4df4f9644bacfb0b4882bb50
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,254 +321,98 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: duch2_prjc_Frame_4
-    originalName: 
-    pivot: {x: 0.4814815, y: -0.037037037}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 109
-      width: 27
-      height: 27
-    spriteID: 3c2e84043940ac8499bbb633e4d67c83
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 109}
-  - name: duch2_prjc_Frame_5
-    originalName: 
-    pivot: {x: 0.4814815, y: -0.037037037}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 144
-      width: 27
-      height: 27
-    spriteID: fa718a9732878384bb93b27418002f9c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 144}
-  - name: duch2_prjc_Frame_6
-    originalName: 
-    pivot: {x: 0.4814815, y: -0.037037037}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 179
-      width: 27
-      height: 27
-    spriteID: e4a79ef97cdb1124483627740c3637a7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 179}
-  - name: duch2_prjc_Frame_7
-    originalName: 
-    pivot: {x: 0.4814815, y: -0.037037037}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 214
-      width: 27
-      height: 27
-    spriteID: 68d15558461220a42868a7f22cfd3c38
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 214}
-  - name: duch2_prjc_Frame_8
-    originalName: 
-    pivot: {x: 0.4814815, y: -0.037037037}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 40
-      y: 4
-      width: 27
-      height: 27
-    spriteID: 6049dd87295960745936c737a2476445
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 40, y: 4}
-  - name: duch2_prjc_Frame_9
-    originalName: 
-    pivot: {x: 0.4814815, y: -0.037037037}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 40
-      y: 39
-      width: 27
-      height: 27
-    spriteID: 5a1a4b4a850754c43a8037914c1efda3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 40, y: 39}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1583618088
-    name: duch2_prjc
+    guid: -1798907869
+    name: Ghost
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: duch2_prjc_Frame_0
+    - name: Ghost_Frame_0
       frameIndex: 0
       cellRect:
         x: 2
         y: 2
         width: 27
         height: 27
-      spriteId: 62a129d82489fda478a09bd66b942de5
-    - name: duch2_prjc_Frame_1
+      spriteId: f045e1c88dc4bd54bba713fd4c01c93f
+    - name: Ghost_Frame_1
       frameIndex: 1
       cellRect:
         x: 3
         y: 1
         width: 27
         height: 27
-      spriteId: 77875d32991004e44afa231814525089
-    - name: duch2_prjc_Frame_2
+      spriteId: 5baad704fb697cb4c9e8ca30b3b197ae
+    - name: Ghost_Frame_2
       frameIndex: 2
       cellRect:
         x: 4
         y: -1
         width: 25
         height: 28
-      spriteId: 355606ce8a765da49aa3f85a40dc598a
-    - name: duch2_prjc_Frame_3
+      spriteId: a74379abeb7c02d4f9368dbd49093c91
+    - name: Ghost_Frame_3
       frameIndex: 3
       cellRect:
         x: 2
         y: 1
         width: 28
         height: 27
-      spriteId: 73859fd0e53d972418116a10af00c806
-    - name: duch2_prjc_Frame_4
+      spriteId: 93dd170cc88b8ca43b31c2d45d65895b
+    - name: Ghost_Frame_4
       frameIndex: 4
       cellRect:
         x: 3
-        y: 1
+        y: 2
         width: 27
         height: 27
-      spriteId: 3c2e84043940ac8499bbb633e4d67c83
-    - name: duch2_prjc_Frame_5
+      spriteId: 80cc4ae8137b51949b7f12c63676b8cb
+    - name: Ghost_Frame_5
       frameIndex: 5
       cellRect:
-        x: 3
+        x: 2
         y: 1
-        width: 27
+        width: 28
         height: 27
-      spriteId: fa718a9732878384bb93b27418002f9c
-    - name: duch2_prjc_Frame_6
+      spriteId: 28d7ecb6ca4b4d64f8e0cf985c0ceb96
+    - name: Ghost_Frame_6
       frameIndex: 6
       cellRect:
-        x: 3
-        y: 1
-        width: 27
+        x: 1
+        y: 0
+        width: 30
         height: 27
-      spriteId: e4a79ef97cdb1124483627740c3637a7
-    - name: duch2_prjc_Frame_7
+      spriteId: f318d8cac6e91b94296e685584e036dd
+    - name: Ghost_Frame_7
       frameIndex: 7
       cellRect:
-        x: 3
+        x: 2
         y: 1
-        width: 27
+        width: 29
         height: 27
-      spriteId: 68d15558461220a42868a7f22cfd3c38
-    - name: duch2_prjc_Frame_8
+      spriteId: 5204ef8680570024ab6b2658149d04c6
+    - name: Ghost_Frame_8
       frameIndex: 8
       cellRect:
-        x: 3
-        y: 1
+        x: 2
+        y: 2
         width: 27
         height: 27
-      spriteId: 6049dd87295960745936c737a2476445
-    - name: duch2_prjc_Frame_9
+      spriteId: 88812dfcdcacb3e4ab7612fa7746e18c
+    - name: Ghost_Frame_9
       frameIndex: 9
       cellRect:
-        x: 3
-        y: 1
-        width: 27
-        height: 27
-      spriteId: 5a1a4b4a850754c43a8037914c1efda3
+        x: 0
+        y: 2
+        width: 31
+        height: 29
+      spriteId: 3a29009e4df4f9644bacfb0b4882bb50
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

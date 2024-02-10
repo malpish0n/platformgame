@@ -12,11 +12,17 @@ public class Movement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public float groundCheckRadius = 0.2f;
+    public float landingCheckRadius = 0.3f;
     bool isGrounded;
+    bool isLanding;
+    public Transform landingCheck;
     private Animator anim;
     private SpriteRenderer sprite;
     float move = 0;
     public GameObject Lamp;
+    bool jump = false;
+    bool landing = false;
+    float time = 0.433f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +38,39 @@ public class Movement : MonoBehaviour
     {
         //zmienna isGrounded sprawdzaj¹ca czy gracz dotyka pod³ogi 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        //zmienna isLanding sprawdzajaca czy gracz zbliza sie do l¹dowania
+        isLanding = Physics2D.OverlapCircle(landingCheck.position, landingCheckRadius, groundLayer);
+        
+
         //pêtla odpowiadaj¹ca za skok
-       
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rig.velocity = new Vector2(rig.velocity.x, jumpforce);
-            
+            anim.SetBool("Jump", true);
+            anim.SetBool("Landing", false);
+            jump = true;
         }
+
+        if (jump)
+        {
+            time -= Time.deltaTime;
+            if(time < 0)
+            {
+                anim.SetBool("Jump", false);
+                jump = false;
+                time = 0.433f;
+                landing = true;
+            } 
+        }
+
+        if(isLanding && landing)
+        {
+            anim.SetBool("Landing", true);
+            landing = false;
+        }
+        
 
         //mechanizm poruszania right/left
         move = Input.GetAxisRaw("Horizontal");
@@ -54,13 +86,13 @@ public class Movement : MonoBehaviour
         {
             anim.SetBool("isRunning", true);
             sprite.flipX = false;
-            Lamp.transform.position = new Vector3(transform.position.x-0.043f, transform.position.y+ 0.243f, 0f);
+            Lamp.transform.position = new Vector3(transform.position.x-0.0448f, transform.position.y+ 0.2455f, 0f);
         }
         if (move < 0f)
         {
             anim.SetBool("isRunning", true);
             sprite.flipX = true;
-            Lamp.transform.position = new Vector3(transform.position.x+0.043f, transform.position.y+ 0.243f, 0f);
+            Lamp.transform.position = new Vector3(transform.position.x+0.048f, transform.position.y+ 0.2455f, 0f);
         }
         if (move == 0f)
         {
