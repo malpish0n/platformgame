@@ -23,6 +23,9 @@ public class Movement : MonoBehaviour
     bool jump = false;
     bool landing = false;
     float time = 0.433f;
+    float jumpTime;
+    public float jumpStartTime;
+    bool offtheGround;
 
     // Start is called before the first frame update
     void Start()
@@ -41,35 +44,9 @@ public class Movement : MonoBehaviour
 
         //zmienna isLanding sprawdzajaca czy gracz zbliza sie do l¹dowania
         isLanding = Physics2D.OverlapCircle(landingCheck.position, landingCheckRadius, groundLayer);
-        
 
-        //pêtla odpowiadaj¹ca za skok
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            rig.velocity = new Vector2(rig.velocity.x, jumpforce);
-            anim.SetBool("Jump", true);
-            anim.SetBool("Landing", false);
-            jump = true;
-        }
-
-        if (jump)
-        {
-            time -= Time.deltaTime;
-            if(time < 0)
-            {
-                anim.SetBool("Jump", false);
-                jump = false;
-                time = 0.433f;
-                landing = true;
-            } 
-        }
-
-        if(isLanding && landing)
-        {
-            anim.SetBool("Landing", true);
-            landing = false;
-        }
+        Jump();
         
 
         //mechanizm poruszania right/left
@@ -86,17 +63,70 @@ public class Movement : MonoBehaviour
         {
             anim.SetBool("isRunning", true);
             sprite.flipX = false;
-            Lamp.transform.position = new Vector3(transform.position.x-0.0448f, transform.position.y+ 0.2455f, 0f);
+            Lamp.transform.position = new Vector3(transform.position.x-0.14f, transform.position.y+ 0.766f, 0f);
         }
         if (move < 0f)
         {
             anim.SetBool("isRunning", true);
             sprite.flipX = true;
-            Lamp.transform.position = new Vector3(transform.position.x+0.048f, transform.position.y+ 0.2455f, 0f);
+            Lamp.transform.position = new Vector3(transform.position.x+ 0.14f, transform.position.y+ 0.766f, 0f);
         }
         if (move == 0f)
         {
             anim.SetBool("isRunning", false);
+        }
+    }
+
+    //Funkcja odpowiadaj¹ca za system skoko wraz z jego animacj¹
+    private void Jump()
+    {
+        if (isGrounded)
+        {
+            anim.SetBool("Landing", false);
+        }
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            anim.SetBool("Jump", true);
+            jump = true;
+            jumpTime = jumpStartTime;
+            rig.velocity = new Vector2(rig.velocity.x, jumpforce);
+            offtheGround = true;
+        }
+
+        if(jump && Input.GetButton("Jump"))
+        {
+            if(jumpTime > 0)
+            {
+                rig.velocity = new Vector2(rig.velocity.x, jumpforce);
+                jumpTime -= Time.deltaTime;
+            }
+            else
+            {
+                jump = false;
+            }
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            jump = false;
+        }
+
+        if (offtheGround)
+        {
+            time -= Time.deltaTime;
+            if (time < 0)
+            {
+                anim.SetBool("Jump", false);
+                offtheGround = false;
+                time = 0.433f;
+                landing = true;
+            }
+        }
+
+        if (isLanding && landing)
+        {
+            anim.SetBool("Landing", true);
+            landing = false;
         }
     }
 
