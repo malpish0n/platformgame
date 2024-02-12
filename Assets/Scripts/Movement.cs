@@ -8,24 +8,32 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D rig;
     public float speed = 20f;
+
     public float jumpforce = 10f;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public float groundCheckRadius = 0.2f;
+
     public float landingCheckRadius = 0.3f;
     bool isGrounded;
     bool isLanding;
     public Transform landingCheck;
     private Animator anim;
+
     private SpriteRenderer sprite;
     float move = 0;
     public GameObject Lamp;
+
     bool jump = false;
     bool landing = false;
     float time = 0.433f;
     float jumpTime;
     public float jumpStartTime;
     bool offtheGround;
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,15 +53,20 @@ public class Movement : MonoBehaviour
         //zmienna isLanding sprawdzajaca czy gracz zbliza sie do l¹dowania
         isLanding = Physics2D.OverlapCircle(landingCheck.position, landingCheckRadius, groundLayer);
 
-
-        Jump();
-        
+        Running();
 
         //mechanizm poruszania right/left
         move = Input.GetAxisRaw("Horizontal");
         rig.velocity = new Vector2(move * speed, rig.velocity.y);
 
-        Running();
+        Jump();
+
+    }
+    private void FixedUpdate()
+    {
+
+        rig.velocity = new Vector2(move * speed, rig.velocity.y);
+
     }
 
     //Funkcja odpowiadaj¹ca za system biegania i odpalaj¹ca odpowiednie animacje
@@ -129,9 +142,5 @@ public class Movement : MonoBehaviour
             landing = false;
         }
     }
-
-    
-
-
 }
 
