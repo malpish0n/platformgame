@@ -46,6 +46,9 @@ public class Movement : MonoBehaviour
     public float wallJumpDuration;
     float wallJumpDurationPass;
 
+    public bool CanJump;
+    public bool CanWallJump;
+
 
 
 
@@ -77,10 +80,15 @@ public class Movement : MonoBehaviour
 
         //mechanizm poruszania right/left
         move = Input.GetAxisRaw("Horizontal");
-
-        Jump();
-        WallSliding();
-        WallJumping(); //lekki bug gdy bardzo szybko klikniesz np. na lewej œcianie d najpierw i spacjê to mo¿e skoczyæ w z³¹ stronê. Jak naprawiæ (nie wiem)
+        if (CanJump)
+        {
+            Jump();
+        }
+        if (CanWallJump)
+        {
+            WallSliding();
+            WallJumping();
+        } //lekki bug gdy bardzo szybko klikniesz np. na lewej œcianie d najpierw i spacjê to mo¿e skoczyæ w z³¹ stronê. Jak naprawiæ (nie wiem)
 
     }
     private void FixedUpdate()
