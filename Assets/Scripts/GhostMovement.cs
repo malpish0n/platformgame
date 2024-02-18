@@ -87,5 +87,20 @@ public class GhostMovement : MonoBehaviour
             }
         }
     }
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            if (flip)
+            {
+                direction = -direction;
+                sprite.flipX = !sprite.flipX;
+                flip = false;
+            }
+        }
+
+        
+    }
+
 }
