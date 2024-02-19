@@ -18,7 +18,7 @@ public class Random_Light : MonoBehaviour
     {
         light_long = GetComponent<Light2D>();
         light_close = light_close_gameObject.GetComponent<Light2D>();
-        number = UnityEngine.Random.Range(0, 10);
+        number = UnityEngine.Random.Range(0, 5);
 
 
     }

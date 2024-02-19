@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class GhostMovement : MonoBehaviour
@@ -12,11 +13,22 @@ public class GhostMovement : MonoBehaviour
     bool isFollowing = false;
     Animator anim;
     float time = 1.35f;
+    public float PatrolRange;
+    Vector2 startPosition;
+    Rigidbody2D rig;
+    public float patrol_speed;
+    float direction = -1;
+    SpriteRenderer sprite;
+    bool flip;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        rig = GetComponent<Rigidbody2D>();
+        startPosition = transform.position;
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -53,6 +65,27 @@ public class GhostMovement : MonoBehaviour
             {
                 isFollowing = true;
             }
+            else
+            {
+                isFollowing = false;
+                if (Vector2.Distance(startPosition, transform.position) < PatrolRange)
+                {
+                    rig.velocity = new Vector2(patrol_speed * direction, rig.velocity.y);
+                    flip = true;
+                }
+                else
+                {
+                    if (flip)
+                    {
+                        direction = -direction;
+                        sprite.flipX = !sprite.flipX;
+                        rig.velocity = new Vector2(patrol_speed * direction, rig.velocity.y);
+                        flip = false;
+                    }
+                    
+                }
+            }
         }
     }
+    
 }
