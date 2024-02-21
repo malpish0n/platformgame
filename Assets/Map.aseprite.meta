@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: map (2)
+  - name: Map
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 149
       height: 80
-    spriteID: 40c374c14fcf80e42a5276c32258696e
+    spriteID: 80986c408067a6a478d3f5c7157d6e8f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,20 +144,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 2138119291
-    name: map (2)
+    guid: 1446179324
+    name: Map
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: map (2)
+    - name: Map
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
         width: 149
         height: 80
-      spriteId: 40c374c14fcf80e42a5276c32258696e
+      spriteId: 80986c408067a6a478d3f5c7157d6e8f
     linkedCells: []
     parentIndex: -1
   platformSettings:
