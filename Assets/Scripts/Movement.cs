@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D rig;
     public float speed = 20f;
+    public float speed_y = 10f;
+    public bool isInHouse;
 
     public float jumpforce = 10f;
     public Transform groundCheck;
@@ -23,6 +25,7 @@ public class Movement : MonoBehaviour
     private SpriteRenderer sprite;
     float move = 0;
     public GameObject Lamp;
+    float move_y = 0;
 
     bool jump = false;
     bool landing = false;
@@ -80,6 +83,7 @@ public class Movement : MonoBehaviour
 
         //mechanizm poruszania right/left
         move = Input.GetAxisRaw("Horizontal");
+        move_y = Input.GetAxisRaw("Vertical");
         if (CanJump)
         {
             Jump();
@@ -93,9 +97,15 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!isWallJumping)
+        if (!isWallJumping && !isInHouse)
         {
+            rig.gravityScale = 1.25f;
             rig.velocity = new Vector2(move * speed, rig.velocity.y);
+        }
+        if (isInHouse)
+        {
+            rig.gravityScale = 0f;
+            rig.velocity = new Vector2(move * speed, move_y * speed_y);
         }
 
     }

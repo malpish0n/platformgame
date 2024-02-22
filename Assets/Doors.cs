@@ -51,6 +51,7 @@ public class Doors : MonoBehaviour
                     BedRoom.SetActive(false);
                     Corridor.SetActive(true);
                 }
+                
             }
             if (Fadeout)
             {
@@ -79,6 +80,7 @@ public class Doors : MonoBehaviour
     {
         if (other.gameObject.name == "mainCharacter")
         {
+            onTrig = false;
             Button.SetActive(false);
         }
     }
