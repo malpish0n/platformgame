@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour
 
     public bool CanJump;
     public bool CanWallJump;
+    public bool CanMove;
 
 
 
@@ -76,7 +77,7 @@ public class Movement : MonoBehaviour
         //zmienna isLanding sprawdzajaca czy gracz zbliza sie do l¹dowania
         isLanding = Physics2D.OverlapCircle(landingCheck.position, landingCheckRadius, groundLayer);
 
-        if (!isWallJumping)
+        if (!isWallJumping && CanMove)
         {
             Running();
         }
@@ -97,15 +98,20 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!isWallJumping && !isInHouse)
+        if (!isWallJumping && !isInHouse && CanMove)
         {
             rig.gravityScale = 1.25f;
             rig.velocity = new Vector2(move * speed, rig.velocity.y);
         }
-        if (isInHouse)
+        if (isInHouse && CanMove)
         {
             rig.gravityScale = 0f;
             rig.velocity = new Vector2(move * speed, move_y * speed_y);
+        }
+        if (!CanMove)
+        {
+            rig.velocity = new Vector2(0, 0);
+            anim.SetBool("isRunning", false);
         }
 
     }

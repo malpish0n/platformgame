@@ -8,12 +8,17 @@ using Image = UnityEngine.UI.Image;
 
 public class Doors : MonoBehaviour
 {
+    public bool toKitchen;
+    public bool toBedroom;
+    public bool toBasement;
     public GameObject BedRoom;
     public GameObject Corridor;
+    public GameObject Basement;
     public GameObject Button;
+    public Movement player;
     bool onTrig;
     bool Fade;
-    bool Fadeout;
+    public bool Fadeout;
     public Image background;
     float Timepass;
     public float time;
@@ -33,7 +38,9 @@ public class Doors : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                player.CanMove = false;
                 Fade = true;
+                f = 0f;
             }
             if(Fade)
             {
@@ -48,20 +55,25 @@ public class Doors : MonoBehaviour
                 if (f >= 1)
                 {
                     Fadeout = true;
-                    BedRoom.SetActive(false);
-                    Corridor.SetActive(true);
+                    Fade = false;
+                    player.CanMove = true;
+                    if (toKitchen)
+                    {
+                        BedRoom.SetActive(false);
+                        Corridor.SetActive(true);
+                    }
+                    if (toBedroom)
+                    {
+                        Corridor.SetActive(false);
+                        BedRoom.SetActive(true);
+                    }
+                    if (toBasement)
+                    {
+                        Corridor.SetActive(false);
+                        Basement.SetActive(true);
+                    }
                 }
                 
-            }
-            if (Fadeout)
-            {
-                if (Timepass < 0 && f > 0)
-                {
-                    f -= 0.01f;
-                    Color.a = f;
-                    background.color = Color;
-                    Timepass = time;
-                }
             }
         }
     }
