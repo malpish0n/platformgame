@@ -50,12 +50,12 @@ public class FloorFalling : MonoBehaviour
             {
                 blackanim.SetBool("Out", true);
                 cameraf.maxCameraright = -2.77f;
-                player.CanMove = true;
                 
             }
             if(blackTime < -2f)
             {
                 continueevent = false;
+                player.CanMove = true;
                 blackScreen.SetActive(false);
             }
         }

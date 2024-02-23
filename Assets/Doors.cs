@@ -11,10 +11,13 @@ public class Doors : MonoBehaviour
     public bool toKitchen;
     public bool toBedroom;
     public bool toBasement;
+    public bool toKitchenDestroyed;
     public GameObject BedRoom;
     public GameObject Corridor;
     public GameObject Basement;
     public GameObject Button;
+    public GameObject DoorstoKitchenDestroyed;
+    public GameObject CorridorDestroyed;
     public Movement player;
     bool onTrig;
     bool Fade;
@@ -24,11 +27,13 @@ public class Doors : MonoBehaviour
     public float time;
     Color Color;
     float f = 0f;
+    bool CanClick;
 
     // Start is called before the first frame update
     void Start()
     {
         Timepass = time;
+        CanClick = true;
     }
 
     // Update is called once per frame
@@ -36,11 +41,15 @@ public class Doors : MonoBehaviour
     {
         if (onTrig)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (CanClick)
             {
-                player.CanMove = false;
-                Fade = true;
-                f = 0f;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    player.CanMove = false;
+                    Fade = true;
+                    f = 0f;
+                    CanClick = false;
+                }
             }
             if(Fade)
             {
@@ -57,14 +66,22 @@ public class Doors : MonoBehaviour
                     Fadeout = true;
                     Fade = false;
                     player.CanMove = true;
+                    CanClick = true;
                     if (toKitchen)
                     {
+                        DoorstoKitchenDestroyed.SetActive(true);
                         BedRoom.SetActive(false);
                         Corridor.SetActive(true);
+                        gameObject.SetActive(false);
+                    }
+                    if (toKitchenDestroyed)
+                    {
+                        BedRoom.SetActive(false);
+                        CorridorDestroyed.SetActive(true);
                     }
                     if (toBedroom)
                     {
-                        Corridor.SetActive(false);
+                        CorridorDestroyed.SetActive(false);
                         BedRoom.SetActive(true);
                     }
                     if (toBasement)

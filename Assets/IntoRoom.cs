@@ -9,16 +9,19 @@ public class IntoKitchen : MonoBehaviour
     public Doors toKitchenscript;
     public Doors toBedroomscript;
     public Doors toBasementscript;
+    public Doors toKitchenDestroyedscript;
     public GameObject DoorsToKitchen;
     public GameObject DoorsToBedroom;
     public GameObject DoorsToBasement;
     public GameObject DoorsToKitchenfromBasement;
+    public GameObject DoorsToKitchenDestroyed;
     float Timepass;
     public float time;
     Color Color;
     float f = 1f;
     public Image background;
     public CameraFollow follow;
+
 
 
 
@@ -36,8 +39,7 @@ public class IntoKitchen : MonoBehaviour
         {
             if (toKitchenscript.Fadeout == true)
             {
-                
-                DoorsToBedroom.SetActive(false);
+                follow.maxCameraright = -4.26f;
                 follow.maxCameraleft = -6.14f;
                 if (Timepass < 0 && f > 0)
                 {
@@ -51,7 +53,6 @@ public class IntoKitchen : MonoBehaviour
                 {
                     toKitchenscript.Fadeout = false;
                     f = 1f;
-                    DoorsToBedroom.SetActive(true);
                 }
 
             }
@@ -60,8 +61,9 @@ public class IntoKitchen : MonoBehaviour
         {
             if (toBedroomscript.Fadeout == true)
             {
-                DoorsToKitchen.SetActive(false);
+                DoorsToKitchenDestroyed.SetActive(false);
                 follow.maxCameraleft = -4.64f;
+                follow.maxCameraright = -4.26f;
                 if (Timepass < 0 && f > 0)
                 {
                     f -= 0.01f;
@@ -74,7 +76,7 @@ public class IntoKitchen : MonoBehaviour
                 {
                     toBedroomscript.Fadeout = false;
                     f = 1f;
-                    DoorsToKitchen.SetActive(true);
+                    DoorsToKitchenDestroyed.SetActive(true);
                 }
 
             }
@@ -99,6 +101,31 @@ public class IntoKitchen : MonoBehaviour
                     toBasementscript.Fadeout = false;
                     f = 1f;
                     DoorsToKitchenfromBasement.SetActive(true);
+                }
+
+            }
+        }
+        if (toKitchenDestroyedscript.toKitchenDestroyed == true)
+        {
+            if (toKitchenDestroyedscript.Fadeout == true)
+            {
+                DoorsToBedroom.SetActive(false);
+                follow.maxCameraleft = -6.14f;
+                follow.Transport();
+                follow.maxCameraright = -2.77f;
+                if (Timepass < 0 && f > 0)
+                {
+                    f -= 0.01f;
+                    Color.a = f;
+                    background.color = Color;
+                    Timepass = time;
+                }
+                Timepass -= Time.deltaTime;
+                if (f <= 0)
+                {
+                    toKitchenDestroyedscript.Fadeout = false;
+                    f = 1f;
+                    DoorsToBedroom.SetActive(true);
                 }
 
             }
